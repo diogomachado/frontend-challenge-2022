@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@frontend-challenge/api/database": [
+        "apps/api/src/libs/database/src/index.ts"
+      ],
+      "@frontend-challenge/shared/app/data-access": [
+        "libs/shared/app/data-access/src/index.ts"
+      ],
+      "@frontend-challenge/shared/util/api-interfaces": [
+        "libs/shared/util/api-interfaces/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

@@ -1,0 +1,82 @@
+<div class="main">
+  <h2 title>Lista de tarefas</h2>
+  <mat-list>
+    <!-- pendentes -->
+    <div mat-subheader>Pendentes</div>
+    <mat-list-item class="list-item" *ngFor="let task of todo$ | async">
+      <mat-icon mat-list-icon>task_alt</mat-icon>
+      <div mat-line>{{task.description}}</div>
+      <button
+        (click)="start(task)"
+        mat-icon-button class="list-item__action">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button
+        (click)="remove(task)"
+        mat-icon-button
+        class="list-item__action">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+    <!-- pendentes -->
+    <mat-divider></mat-divider>
+    <!-- em andamento -->
+    <div mat-subheader>Em Andamento</div>
+    <mat-list-item class="list-item" *ngFor="let task of doing$ | async">
+      <mat-icon mat-list-icon>task_alt</mat-icon>
+      <div mat-line>{{task.description}}</div>
+      <button
+        (click)="stop(task)"
+        mat-icon-button class="list-item__action">
+        <mat-icon>undo</mat-icon>
+      </button>
+      <button
+        (click)="conclude(task)"
+        mat-icon-button class="list-item__action">
+        <mat-icon>check</mat-icon>
+      </button>
+      <button
+        (click)="remove(task)"
+        mat-icon-button class="list-item__action">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+    <!-- em andamento -->
+    <mat-divider></mat-divider>
+    <!-- concluídos -->
+    <div mat-subheader>Concluídos</div>
+    <mat-list-item class="list-item" *ngFor="let task of done$ | async">
+      <mat-icon mat-list-icon>task_alt</mat-icon>
+      <div mat-line>{{task.description}}</div>
+      <button
+        (click)="restart(task)"
+        mat-icon-button class="list-item__action">
+        <mat-icon>undo</mat-icon>
+      </button>
+      <button
+        (click)="remove(task)"
+        mat-icon-button class="list-item__action">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+    <!-- concluídos -->
+  </mat-list>
+  <mat-divider></mat-divider>
+  <form class="form">
+    <h2 subheading-2>Nova tarefa</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <input type="text" matInput [formControl]="description">
+    </mat-form-field>
+    <button
+      (click)="create()"
+      type="button"
+      mat-flat-button
+      color="primary"
+      class="add-button"
+    >
+      <mat-icon>add_task</mat-icon>
+      Adicionar tarefa
+    </button>
+  </form>
+</div>

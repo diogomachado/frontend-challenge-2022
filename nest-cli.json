@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "database": {
+      "type": "library",
+      "root": "apps/api/src/libs/database",
+      "entryFile": "index",
+      "sourceRoot": "apps/api/src/libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/src/libs/database/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}

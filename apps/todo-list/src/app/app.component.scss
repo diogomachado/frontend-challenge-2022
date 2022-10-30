@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 16px;
+  max-width: 480px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.list-item__action {
+  display: none;
+}
+
+.list-item:hover,
+.list-item:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+
+  .list-item__action {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.add-button {
+  margin: 16px auto;
+  flex: 0 0 auto;
+}
