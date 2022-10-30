@@ -22,7 +22,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent implements OnInit {
   snackProcessing: MatSnackBar | undefined;
-  subsc = new Subscription();
   description: FormControl = new FormControl<string>('');
   todo$: Observable<Task[]> = this.store.select(TodoListSelectors.todoTaskList);
   doing$: Observable<Task[]> = this.store.select(
